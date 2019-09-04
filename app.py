@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 
 import os
@@ -86,3 +87,17 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_server_error(e):
     return render_template('errors/500.html'), 500
+=======
+from flask import  Flask
+app=Flask(__name__)
+
+@app.route('/')
+@app.route('/hi')
+def index():
+    return '<h1>Hello Flask!</h1>'
+
+@app.route('/greet',defaults={'name':'Programmer'})    #如果用户访问/greet,name使用默认值Programmer
+@app.route('/greet/<name>')
+def greet(name):
+    return '<h1>Hello %s!</h1>' %name
+>>>>>>> 19a903dd6517d82cff5da214c1b0b68da8777e41
